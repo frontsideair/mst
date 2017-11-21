@@ -25,14 +25,14 @@ fn main() {
         .parse()
         .expect("Not a number.");
 
-    let mut graph: Adjacency = vec![vec![0.0; num_nodes]; num_nodes];
+    let mut graph: Adjacency = vec![vec![Weight::new(0.0); num_nodes]; num_nodes];
     for (line, _) in lines.zip(0..num_edges) {
         let line_str = line.expect("Cannot read line.");
         let words: Vec<&str> = line_str.split_whitespace().collect();
 
         let node1 = words[0].parse::<usize>().expect("Cannot parse edge 1.");
         let node2 = words[1].parse::<usize>().expect("Cannot parse edge 2.");
-        let weight = words[2].parse::<f32>().expect("Cannot parse weight.");
+        let weight = Weight::new(words[2].parse::<f32>().expect("Cannot parse weight."));
 
         graph[node1][node2] = weight;
         graph[node2][node1] = weight;
