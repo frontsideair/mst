@@ -11,14 +11,14 @@ pub fn run(adjacency_list: Adjacency, num_nodes: usize, start_node: Node) -> Has
 
         // assume these will always be initialized in the loop below
         let mut add_node: usize = 0;
-        let mut edge = Edge { left: 0, right: 0 };
+        let mut edge = Edge::new(0, 0);
 
         for j in 0..num_nodes {
             if nodes_added[j] {
                 for k in 0..num_nodes {
                     if !nodes_added[k] && adjacency_list[j][k] < min {
                         add_node = k;
-                        edge = Edge { left: j, right: k };
+                        edge = Edge::new(j, k);
                         min = adjacency_list[j][k];
                     }
                 }
