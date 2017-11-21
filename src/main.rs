@@ -25,7 +25,7 @@ fn main() {
         .parse()
         .expect("Not a number.");
 
-    let mut graph: Adjacency = vec![vec![Weight::new(0.0); num_nodes]; num_nodes];
+    let mut graph: Adjacency = vec![vec![Weight::MAX; num_nodes]; num_nodes];
     for (line, _) in lines.zip(0..num_edges) {
         let line_str = line.expect("Cannot read line.");
         let words: Vec<&str> = line_str.split_whitespace().collect();

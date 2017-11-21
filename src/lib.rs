@@ -28,13 +28,13 @@ impl Eq for Weight {}
 
 impl PartialEq for Weight {
     fn eq(&self, other: &Weight) -> bool {
-        other.0.eq(&self.0)
+        self.0.eq(&other.0)
     }
 }
 
 impl Ord for Weight {
     fn cmp(&self, other: &Weight) -> Ordering {
-        other.0.cmp(&self.0)
+        self.0.cmp(&other.0)
     }
 }
 
