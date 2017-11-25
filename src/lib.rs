@@ -6,7 +6,7 @@ pub mod prim2;
 
 pub type Node = usize;
 
-#[derive(Debug)]
+#[derive(Debug, Hash, Copy, Clone, PartialEq, Eq, PartialOrd, Ord)]
 pub struct Weight(u32);
 
 impl Weight {
@@ -16,33 +16,6 @@ impl Weight {
 
     pub const MIN: Weight = Weight(0);
     pub const MAX: Weight = Weight(u32::MAX);
-}
-
-impl Clone for Weight {
-    fn clone(&self) -> Weight {
-        Weight(self.0.clone())
-    }
-}
-
-impl Copy for Weight {}
-impl Eq for Weight {}
-
-impl PartialEq for Weight {
-    fn eq(&self, other: &Weight) -> bool {
-        self.0.eq(&other.0)
-    }
-}
-
-impl Ord for Weight {
-    fn cmp(&self, other: &Weight) -> Ordering {
-        self.0.cmp(&other.0)
-    }
-}
-
-impl PartialOrd for Weight {
-    fn partial_cmp(&self, other: &Weight) -> Option<Ordering> {
-        self.0.partial_cmp(&other.0)
-    }
 }
 
 pub type Adjacency = Vec<Vec<Weight>>;
