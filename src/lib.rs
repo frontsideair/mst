@@ -1,8 +1,8 @@
-use std::cmp::Ordering;
-use std::hash::{Hash, Hasher};
+use std::cmp::{Ordering, min, max};
 use std::u32;
 
 pub mod prim1;
+pub mod prim2;
 
 pub type Node = usize;
 
@@ -45,15 +45,9 @@ impl PartialOrd for Weight {
     }
 }
 
-impl Hash for Weight {
-    fn hash<H: Hasher>(&self, state: &mut H) {
-        self.0.hash(state)
-    }
-}
-
 pub type Adjacency = Vec<Vec<Weight>>;
 
-#[derive(Debug, PartialEq, Eq, Hash)]
+#[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub struct Edge {
     left: Node,
     right: Node,
@@ -62,19 +56,23 @@ pub struct Edge {
 
 // this ensures Edge::new(1,2) == Edge::new(2,1)
 impl Edge {
-    pub fn new(node1: Node, node2: Node, weight: Weight) -> Edge {
-        if node1 < node2 {
-            Edge {
-                left: node1,
-                right: node2,
-                weight,
-            }
-        } else {
-            Edge {
-                left: node2,
-                right: node1,
-                weight,
-            }
+    pub fn new(left: Node, right: Node, weight: Weight) -> Edge {
+        Edge {
+            left: min(left, right),
+            right: max(left, right),
+            weight,
         }
+    }
+}
+
+impl Ord for Edge {
+    fn cmp(&self, &other: &Edge) -> Ordering {
+        self.weight.cmp(&other.weight)
+    }
+}
+
+impl PartialOrd for Edge {
+    fn partial_cmp(&self, &other: &Edge) -> Option<Ordering> {
+        self.weight.partial_cmp(&other.weight)
     }
 }
