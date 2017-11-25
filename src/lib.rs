@@ -14,6 +14,7 @@ impl Weight {
         Weight((num * 100000.0) as u32)
     }
 
+    pub const MIN: Weight = Weight(0);
     pub const MAX: Weight = Weight(u32::MAX);
 }
 

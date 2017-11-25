@@ -11,7 +11,7 @@ pub fn run(adjacency_list: Adjacency, num_nodes: usize, start_node: Node) -> Vec
 
         // assume these will always be initialized in the loop below
         let mut add_node: usize = 0;
-        let mut edge = Edge::new(0, 0, Weight::new(0.0));
+        let mut edge = Edge::new(0, 0, Weight::MIN);
 
         for j in 0..num_nodes {
             if nodes_added[j] {
