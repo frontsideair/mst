@@ -4,7 +4,7 @@ pub fn run(adjacency_list: Adjacency, num_nodes: usize, start_node: Node) -> Vec
     let mut mst: Vec<Edge> = Vec::with_capacity(num_nodes - 1);
     let mut labels: Vec<Weight> = Vec::new();
     let mut back: Vec<Node> = Vec::new();
-    let mut permanent: Vec<bool> = Vec::new();
+    let mut permanent: Vec<bool> = vec![false; num_nodes];
 
     for j in 0..num_nodes {
         labels.push(adjacency_list[start_node][j]);
