@@ -35,12 +35,9 @@ pub fn run(graph: &Graph, start_node: NodeID) -> Vec<Edge> {
         // add edge(i, back[i]) to the mst
         mst.push(Edge::new(i, back[i], min.clone()));
         // for each temporary label k do
-        for (k, weight) in labels_clone.iter().enumerate().filter(
-            |item| !permanent[item.0],
-        )
-        {
+        for (k, weight) in labels_clone.iter().enumerate() {
             // if (adjacency[i,k] < labels[k]) then
-            if &adjacency_list[i].adjacency[k] < weight {
+            if !permanent[k] && &adjacency_list[i].adjacency[k] < weight {
                 labels[k] = adjacency_list[i].adjacency[k];
                 back[k] = i;
             }

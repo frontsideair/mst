@@ -23,4 +23,10 @@ fn criterion_benchmark() {
         |b, &graph| b.iter(|| prim2::run(&graph, 0)),
         &[&graph1, &graph2, &graph3, &graph4],
     );
+
+    Criterion::default().bench_function_over_inputs(
+        "prim3",
+        |b, &graph| b.iter(|| prim2::run(&graph, 0)),
+        &[&graph1, &graph2, &graph3, &graph4],
+    );
 }
