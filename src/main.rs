@@ -8,10 +8,10 @@ fn main() {
     // read filename from args
     let filename = env::args().nth(1).expect("Please provide a file name.");
 
-    let (graph, edges, num_nodes) = read_graph_from_file(&filename[..]);
+    let graph = read_graph_from_file(&filename[..]);
     // println!("{:?}", graph);
 
-    let mst = mintree1::prim2::run(graph, num_nodes, 0);
+    let mst = mintree1::prim1::run(&graph, 0);
     // let mst = mintree1::prim3::run(graph, num_nodes, edges, 0);
     let sum: Weight = mst.iter().fold(Weight::MIN, |acc, edge| acc + edge.weight);
 

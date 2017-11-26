@@ -1,13 +1,16 @@
 use super::*;
 
-pub fn run(adjacency_list: &Adjacency, num_nodes: usize, start_node: Node) -> Vec<Edge> {
+pub fn run(graph: &Graph, start_node: NodeID) -> Vec<Edge> {
+    let num_nodes = graph.nodes.len();
+    let adjacency_list = &graph.nodes;
+
     let mut mst: Vec<Edge> = Vec::with_capacity(num_nodes - 1);
     let mut labels: Vec<Weight> = Vec::new();
-    let mut back: Vec<Node> = Vec::new();
+    let mut back: Vec<NodeID> = Vec::new();
     let mut permanent: Vec<bool> = vec![false; num_nodes];
 
     for j in 0..num_nodes {
-        labels.push(adjacency_list[start_node][j]);
+        labels.push(adjacency_list[start_node].adjacency[j]);
         back.push(start_node);
     }
 
@@ -37,8 +40,8 @@ pub fn run(adjacency_list: &Adjacency, num_nodes: usize, start_node: Node) -> Ve
         )
         {
             // if (adjacency[i,k] < labels[k]) then
-            if &adjacency_list[i][k] < weight {
-                labels[k] = adjacency_list[i][k];
+            if &adjacency_list[i].adjacency[k] < weight {
+                labels[k] = adjacency_list[i].adjacency[k];
                 back[k] = i;
             }
         }

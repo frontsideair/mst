@@ -1,6 +1,8 @@
 use super::*;
 
-pub fn run(adjacency_list: &Adjacency, num_nodes: usize, start_node: Node) -> Vec<Edge> {
+pub fn run(graph: &Graph, start_node: NodeID) -> Vec<Edge> {
+    let num_nodes = graph.nodes.len();
+    let adjacency_list = &graph.nodes;
     let mut nodes_added: Vec<bool> = vec![false; num_nodes];
     nodes_added[start_node] = true;
     let mut mst: Vec<Edge> = Vec::with_capacity(num_nodes - 1);
@@ -16,10 +18,10 @@ pub fn run(adjacency_list: &Adjacency, num_nodes: usize, start_node: Node) -> Ve
         for j in 0..num_nodes {
             if nodes_added[j] {
                 for k in 0..num_nodes {
-                    if !nodes_added[k] && (adjacency_list[j][k] < min) {
+                    if !nodes_added[k] && (adjacency_list[j].adjacency[k] < min) {
                         add_node = k;
-                        edge = Edge::new(j, k, adjacency_list[j][k]);
-                        min = adjacency_list[j][k];
+                        edge = Edge::new(j, k, adjacency_list[j].adjacency[k]);
+                        min = adjacency_list[j].adjacency[k];
                     }
                 }
             }
