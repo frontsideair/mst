@@ -1,6 +1,6 @@
 use super::*;
 
-pub fn run(adjacency_list: Adjacency, num_nodes: usize, start_node: Node) -> Vec<Edge> {
+pub fn run(adjacency_list: &Adjacency, num_nodes: usize, start_node: Node) -> Vec<Edge> {
     let mut mst: Vec<Edge> = Vec::with_capacity(num_nodes - 1);
     let mut labels: Vec<Weight> = Vec::new();
     let mut back: Vec<Node> = Vec::new();
