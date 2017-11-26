@@ -8,6 +8,7 @@ use std::fmt::{Display, Formatter, Result};
 
 pub mod prim1;
 pub mod prim2;
+pub mod prim3;
 
 #[derive(Debug)]
 pub struct Graph {
@@ -61,7 +62,7 @@ impl Node {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Edge {
     left: NodeID,
     right: NodeID,
