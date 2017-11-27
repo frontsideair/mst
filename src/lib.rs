@@ -36,10 +36,8 @@ impl Graph {
         self.edges.push(Edge::new(left_index, right_index, weight));
 
         self.nodes[left_index].adjacency[right_index] = weight;
-        self.nodes[left_index].neighbors.push(right_index);
 
         self.nodes[right_index].adjacency[left_index] = weight;
-        self.nodes[right_index].neighbors.push(left_index);
     }
 }
 
@@ -57,15 +55,11 @@ impl Display for Graph {
 #[derive(Debug, Clone)]
 struct Node {
     adjacency: Vec<Weight>,
-    neighbors: Vec<NodeID>,
 }
 
 impl Node {
     fn with_capacity(capacity: usize) -> Node {
-        Node {
-            adjacency: vec![Weight::MAX; capacity],
-            neighbors: Vec::with_capacity(capacity),
-        }
+        Node { adjacency: vec![Weight::MAX; capacity] }
     }
 }
 
