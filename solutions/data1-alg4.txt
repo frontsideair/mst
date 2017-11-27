@@ -1,0 +1,2 @@
+Total weight: Weight(181000)
+Number of edges: 8

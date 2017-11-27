@@ -9,6 +9,7 @@ use std::fmt::{Display, Formatter, Result};
 pub mod prim1;
 pub mod prim2;
 pub mod prim3;
+pub mod prim4;
 
 #[derive(Debug)]
 pub struct Graph {
@@ -44,7 +45,7 @@ impl Display for Graph {
             self.nodes.len(),
             self.edges.len()
         )
-}
+    }
 }
 
 #[derive(Debug, Clone)]

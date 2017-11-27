@@ -11,7 +11,7 @@ fn main() {
     let graph = read_graph_from_file(&filename[..]);
     // println!("{:?}", graph);
 
-    let mst = mintree1::prim3::run(&graph, 0);
+    let mst = mintree1::prim4::run(&graph, 0);
     let sum: Weight = mst.iter().fold(Weight::MIN, |acc, edge| acc + edge.weight);
 
     println!("Total weight: {:?}", sum);
