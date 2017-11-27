@@ -11,6 +11,12 @@ pub mod prim2;
 pub mod prim3;
 pub mod prim4;
 
+pub mod minheap;
+
+pub trait HasIndex {
+    fn get_index(&self) -> usize;
+}
+
 #[derive(Debug)]
 pub struct Graph {
     nodes: Vec<Node>,
