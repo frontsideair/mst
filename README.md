@@ -21,5 +21,6 @@ target/releases/mintree1 data1.txt
 To benchmark:
 
 ```sh
-cargo bench -- criterion_benchmark --test --nocapture
+cargo bench -- function_benchmark --test --nocapture
+cargo bench -- data_benchmark --test --nocapture
 ```
