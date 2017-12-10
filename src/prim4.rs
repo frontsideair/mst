@@ -53,13 +53,14 @@ pub fn run(graph: &Graph, start_node: NodeID) -> Vec<Edge> {
         for (v, &weight_v) in adj[u].adjacency.iter().enumerate() {
             // if (node_v in queue) and adj[node_u][node_v] < key[node_v] {
             if queue.has(v) && (queue.is_empty() || weight_v < queue.peek_by_index(v).key) {
-                // pi[node_v] = node_u; key[node_v] = adj[node_u][node_v];
-                let new_nodeish = Nodeish {
-                    i: v,
-                    pi: Some(u),
-                    key: weight_v,
-                };
                 if !queue.is_empty() {
+                    // pi[node_v] = node_u; key[node_v] = adj[node_u][node_v];
+                    // potential improvement, pass the weight as key
+                    let new_nodeish = Nodeish {
+                        i: v,
+                        pi: Some(u),
+                        key: weight_v,
+                    };
                     queue.decrease_key(v, &new_nodeish);
                 }
             }
