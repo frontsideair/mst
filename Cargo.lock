@@ -5,7 +5,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "byteorder"
-version = "1.1.0"
+version = "1.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -15,11 +15,11 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "criterion"
-version = "0.0.0"
-source = "git+https://github.com/japaric/criterion.rs.git#a31a0c4d393f7a65cb56a55b5d9083e090da29e7"
+version = "0.1.0"
+source = "git+https://github.com/japaric/criterion.rs.git#eaa682f7a01ad9edef4fcee8fcb447acdbe143db"
 dependencies = [
- "criterion-plot 0.1.0 (git+https://github.com/japaric/simplot.rs)",
- "criterion-stats 0.1.0 (git+https://github.com/japaric/stats.rs)",
+ "criterion-plot 0.1.1 (git+https://github.com/japaric/criterion.rs.git)",
+ "criterion-stats 0.1.1 (git+https://github.com/japaric/criterion.rs.git)",
  "itertools 0.4.19 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.8 (registry+https://github.com/rust-lang/crates.io-index)",
  "rustc-serialize 0.3.24 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -27,18 +27,18 @@ dependencies = [
 
 [[package]]
 name = "criterion-plot"
-version = "0.1.0"
-source = "git+https://github.com/japaric/simplot.rs#91e696410b5e44bc226d21651e9cf71ce10f19bc"
+version = "0.1.1"
+source = "git+https://github.com/japaric/criterion.rs.git#eaa682f7a01ad9edef4fcee8fcb447acdbe143db"
 dependencies = [
- "byteorder 1.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "byteorder 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "cast 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "itertools 0.5.10 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "criterion-stats"
-version = "0.1.0"
-source = "git+https://github.com/japaric/stats.rs#35c1c6ed78fa88932018af75c4659d2d3cacd213"
+version = "0.1.1"
+source = "git+https://github.com/japaric/criterion.rs.git#eaa682f7a01ad9edef4fcee8fcb447acdbe143db"
 dependencies = [
  "cast 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "floaty 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -91,7 +91,7 @@ dependencies = [
 
 [[package]]
 name = "libc"
-version = "0.2.33"
+version = "0.2.34"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -103,7 +103,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 name = "mintree1"
 version = "0.1.0"
 dependencies = [
- "criterion 0.0.0 (git+https://github.com/japaric/criterion.rs.git)",
+ "criterion 0.1.0 (git+https://github.com/japaric/criterion.rs.git)",
 ]
 
 [[package]]
@@ -111,7 +111,7 @@ name = "num_cpus"
 version = "0.2.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "libc 0.2.33 (registry+https://github.com/rust-lang/crates.io-index)",
+ "libc 0.2.34 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -120,7 +120,7 @@ version = "0.3.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "fuchsia-zircon 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "libc 0.2.33 (registry+https://github.com/rust-lang/crates.io-index)",
+ "libc 0.2.34 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -135,18 +135,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [metadata]
 "checksum bitflags 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)" = "aad18937a628ec6abcd26d1489012cc0e18c21798210f491af69ded9b881106d"
-"checksum byteorder 1.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ff81738b726f5d099632ceaffe7fb65b90212e8dce59d518729e7e8634032d3d"
+"checksum byteorder 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "652805b7e73fada9d85e9a6682a4abd490cb52d96aeecc12e33a0de34dfd0d23"
 "checksum cast 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "011941fb53da1a8ac3e4132a1becc367c44fe13f630769f3143d8c66c91c6cb6"
-"checksum criterion 0.0.0 (git+https://github.com/japaric/criterion.rs.git)" = "<none>"
-"checksum criterion-plot 0.1.0 (git+https://github.com/japaric/simplot.rs)" = "<none>"
-"checksum criterion-stats 0.1.0 (git+https://github.com/japaric/stats.rs)" = "<none>"
+"checksum criterion 0.1.0 (git+https://github.com/japaric/criterion.rs.git)" = "<none>"
+"checksum criterion-plot 0.1.1 (git+https://github.com/japaric/criterion.rs.git)" = "<none>"
+"checksum criterion-stats 0.1.1 (git+https://github.com/japaric/criterion.rs.git)" = "<none>"
 "checksum either 1.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "740178ddf48b1a9e878e6d6509a1442a2d42fd2928aae8e7a6f8a36fb01981b3"
 "checksum floaty 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "9ec0558c4a9db483f490555ecf83726a9dd874a0a3e2e5f7d4050f23efcb795e"
 "checksum fuchsia-zircon 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "f6c0581a4e363262e52b87f59ee2afe3415361c6ec35e665924eb08afe8ff159"
 "checksum fuchsia-zircon-sys 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "43f3795b4bae048dc6123a6b972cadde2e676f9ded08aef6bb77f5f157684a82"
 "checksum itertools 0.4.19 (registry+https://github.com/rust-lang/crates.io-index)" = "c4a9b56eb56058f43dc66e58f40a214b2ccbc9f3df51861b63d51dec7b65bc3f"
 "checksum itertools 0.5.10 (registry+https://github.com/rust-lang/crates.io-index)" = "4833d6978da405305126af4ac88569b5d71ff758581ce5a987dbfa3755f694fc"
-"checksum libc 0.2.33 (registry+https://github.com/rust-lang/crates.io-index)" = "5ba3df4dcb460b9dfbd070d41c94c19209620c191b0340b929ce748a2bcd42d2"
+"checksum libc 0.2.34 (registry+https://github.com/rust-lang/crates.io-index)" = "36fbc8a8929c632868295d0178dd8f63fc423fd7537ad0738372bd010b3ac9b0"
 "checksum log 0.3.8 (registry+https://github.com/rust-lang/crates.io-index)" = "880f77541efa6e5cc74e76910c9884d9859683118839d6a1dc3b11e63512565b"
 "checksum num_cpus 0.2.13 (registry+https://github.com/rust-lang/crates.io-index)" = "cee7e88156f3f9e19bdd598f8d6c9db7bf4078f99f8381f43a55b09648d1a6e3"
 "checksum rand 0.3.18 (registry+https://github.com/rust-lang/crates.io-index)" = "6475140dfd8655aeb72e1fd4b7a1cc1c202be65d71669476e392fe62532b9edd"
